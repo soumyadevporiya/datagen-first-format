@@ -54,9 +54,9 @@ if __name__ == '__main__':
         # print(s)
         producer.send('my-datagen1-topic', json.dumps(s).encode('utf-8'))
         big_count = big_count + count
-        sleep(0.001)
+        sleep(0.1)
         print("Big Count:  " + str(big_count))
-        if big_count == 1000000:
+        if big_count == 10000000:
             if producer is not None:
                 producer.close()
             break
